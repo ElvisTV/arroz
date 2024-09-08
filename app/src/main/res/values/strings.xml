@@ -10,4 +10,8 @@
     <string name="menu_home">Frases</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+
+    <string name="detail_estrellas">Detalle</string>
+
+
 </resources>
