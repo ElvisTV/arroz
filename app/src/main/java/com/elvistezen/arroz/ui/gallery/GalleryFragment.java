@@ -12,20 +12,26 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.elvistezen.arroz.databinding.FragmentGalleryBinding;
 
+
 public class GalleryFragment extends Fragment {
 
     private FragmentGalleryBinding binding;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        GalleryViewModel galleryViewModel =
-                new ViewModelProvider(this).get(GalleryViewModel.class);
-
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentGalleryBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textGallery;
-        galleryViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        // Obtener los datos desde el bundle
+        Bundle args = getArguments();
+        if (args != null) {
+            String author = args.getString("author");
+            String phrase = args.getString("phrase");
+            String meaning = args.getString("meaning");
+
+            // Mostrar los datos
+            binding.textGallery.setText("Autor: " + author + "\n\nFrase: " + phrase + "\n\nSignificado: " + meaning);
+        }
+
         return root;
     }
 

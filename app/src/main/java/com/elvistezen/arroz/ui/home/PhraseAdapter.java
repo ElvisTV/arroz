@@ -8,12 +8,17 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.elvistezen.arroz.R;
 import java.util.List;
-
 public class PhraseAdapter extends RecyclerView.Adapter<PhraseAdapter.PhraseViewHolder> {
     private List<Phrase> phraseList;
+    private OnItemClickListener onItemClickListener;
 
-    public PhraseAdapter(List<Phrase> phraseList) {
+    public interface OnItemClickListener {
+        void onItemClick(Phrase phrase);
+    }
+
+    public PhraseAdapter(List<Phrase> phraseList, OnItemClickListener listener) {
         this.phraseList = phraseList;
+        this.onItemClickListener = listener;
     }
 
     @NonNull
@@ -25,7 +30,11 @@ public class PhraseAdapter extends RecyclerView.Adapter<PhraseAdapter.PhraseView
 
     @Override
     public void onBindViewHolder(@NonNull PhraseViewHolder holder, int position) {
-        holder.textViewPhrase.setText(phraseList.get(position).getPhrase());
+        Phrase phrase = phraseList.get(position);
+        holder.textViewPhrase.setText(phrase.getPhrase());
+
+        // Set click listener for each phrase
+        holder.itemView.setOnClickListener(v -> onItemClickListener.onItemClick(phrase));
     }
 
     @Override
