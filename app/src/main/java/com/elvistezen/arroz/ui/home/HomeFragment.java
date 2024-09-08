@@ -48,15 +48,21 @@ public class HomeFragment extends Fragment {
 
     // Método para cargar las frases
     private void loadPhrases() {
-        String[] phrases = {
-                "Frase 1", "Frase 2", "Frase 3", "Frase 4", "Frase 5",
-                "Frase 6", "Frase 7", "Frase 8", "Frase 9", "Frase 10",
-                "Frase 11", "Frase 12", "Frase 13", "Frase 14", "Frase 15",
-                "Frase 16", "Frase 17", "Frase 18", "Frase 19", "Frase 20"
+        Phrase[] phrases = {
+                new Phrase(1, "Autor 1", "Phrase 1", "Significado 1"),
+                new Phrase(2, "Autor 2", "Phrase 2", "Significado 2"),
+                new Phrase(3, "Autor 3", "Phrase 3", "Significado 3"),
+                new Phrase(4, "Autor 4", "Phrase 4", "Significado 4"),
+                new Phrase(5, "Autor 5", "Phrase 5", "Significado 5"),
+                new Phrase(6, "Autor 6", "Phrase 6", "Significado 6"),
+                new Phrase(7, "Autor 7", "Phrase 7", "Significado 7"),
+                new Phrase(8, "Autor 8", "Phrase 8", "Significado 8"),
+                new Phrase(9, "Autor 9", "Phrase 9", "Significado 9"),
+                new Phrase(10, "Autor 10", "Phrase 10", "Significado 10")
         };
 
-        for (String phrase : phrases) {
-            phraseList.add(new Phrase(phrase));
+        for (Phrase phrase : phrases) {
+            phraseList.add(phrase);
         }
     }
 
