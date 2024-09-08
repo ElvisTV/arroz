@@ -1,17 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp"
+    android:background="#E0F7FA"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="8dp"
-    android:elevation="4dp">
+    android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/textViewPhrase"
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:textSize="18sp"
-        android:textColor="@android:color/black"
-        android:text="Sample Phrase"/>
-</androidx.cardview.widget.CardView>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:padding="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Image on the left -->
+            <ImageView
+                android:id="@+id/header_image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@mipmap/ic_principal_round"
+                android:contentDescription="Product Image"
+                android:scaleType="centerCrop"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginEnd="8dp"/>
+
+            <!-- Title to the right of the image -->
+            <TextView
+                android:id="@+id/textViewPhrase"
+                style="@style/TextAppearance.MaterialComponents.Headline3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:text="I'm a title"
+                app:layout_constraintStart_toEndOf="@id/header_image"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <!-- Subhead to the right of the image -->
+            <TextView
+                android:id="@+id/subhead"
+                style="@style/TextAppearance.MaterialComponents.Subtitle2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="I'm a subhead"
+                app:layout_constraintStart_toEndOf="@id/header_image"
+                app:layout_constraintTop_toBottomOf="@id/textViewPhrase"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <!-- Body text below the subhead -->
+            <TextView
+                android:id="@+id/body"
+                style="@style/TextAppearance.MaterialComponents.Body1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="I'm a supporting text. Very Lorem ipsum dolor sit amet..."
+                app:layout_constraintStart_toEndOf="@id/header_image"
+                app:layout_constraintTop_toBottomOf="@id/subhead"
+                app:layout_constraintEnd_toEndOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
