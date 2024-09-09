@@ -40,8 +40,14 @@ public class GalleryFragment extends Fragment {
             String phrase = args.getString("phrase");
             String meaning = args.getString("meaning");
 
+//          binding.textGallery.setText("Autor: " + author + "\n\nFrase: " + phrase + "\n\nSignificado: " + meaning);
+
             // Mostrar los datos
-            binding.textGallery.setText("Autor: " + author + "\n\nFrase: " + phrase + "\n\nSignificado: " + meaning);
+            binding.textAutor.setText("El Titulo es: " + author );
+            binding.textFrase.setText("La Frase es: " + phrase );
+            binding.textDetalle.setText("El Significado es: " + meaning );
+
+
         }
 
         // Cargar el anuncio de Rewarded
