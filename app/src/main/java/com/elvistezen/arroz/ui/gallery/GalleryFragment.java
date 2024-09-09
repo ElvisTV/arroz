@@ -10,18 +10,30 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.rewarded.RewardedAd;
+import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback;
+import com.google.android.gms.ads.rewarded.RewardItem;
+import com.google.android.gms.ads.OnUserEarnedRewardListener;
+import com.google.android.gms.ads.LoadAdError;
+
+
+
+
 import com.elvistezen.arroz.databinding.FragmentGalleryBinding;
 
 
 public class GalleryFragment extends Fragment {
 
     private FragmentGalleryBinding binding;
+    private RewardedAd rewardedAd;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentGalleryBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        // Obtener los datos desde el bundle
+        // Obtener datos del bundle
         Bundle args = getArguments();
         if (args != null) {
             String author = args.getString("author");
@@ -32,7 +44,42 @@ public class GalleryFragment extends Fragment {
             binding.textGallery.setText("Autor: " + author + "\n\nFrase: " + phrase + "\n\nSignificado: " + meaning);
         }
 
+        // Cargar el anuncio de Rewarded
+        loadRewardedAd();
+
+        // Configurar el clic en el botón save_button
+        binding.saveButton.setOnClickListener(v -> showRewardedAd());
+
         return root;
+    }
+
+    private void loadRewardedAd() {
+        AdRequest adRequest = new AdRequest.Builder().build();
+        RewardedAd.load(requireContext(), "ca-app-pub-5800756673263633/1240301845", adRequest,
+                new RewardedAdLoadCallback() {
+                    @Override
+                    public void onAdLoaded(@NonNull RewardedAd ad) {
+                        rewardedAd = ad;
+                    }
+
+                    @Override
+                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                        // Manejar el error
+                    }
+                });
+    }
+
+    private void showRewardedAd() {
+        if (rewardedAd != null) {
+            rewardedAd.show(requireActivity(), new OnUserEarnedRewardListener() {
+                @Override
+                public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+                    // Manejar la recompensa del usuario
+                }
+            });
+        } else {
+            // El anuncio no está listo
+        }
     }
 
     @Override

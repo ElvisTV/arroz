@@ -14,6 +14,8 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.ads.MobileAds;
+
 import com.elvistezen.arroz.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
@@ -24,6 +26,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Inicialización del SDK de AdMob
+        MobileAds.initialize(this, initializationStatus -> {});
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
