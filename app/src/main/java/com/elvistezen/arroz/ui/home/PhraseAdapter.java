@@ -31,7 +31,8 @@ public class PhraseAdapter extends RecyclerView.Adapter<PhraseAdapter.PhraseView
     @Override
     public void onBindViewHolder(@NonNull PhraseViewHolder holder, int position) {
         Phrase phrase = phraseList.get(position);
-        holder.textViewPhrase.setText(phrase.getPhrase());
+        holder.textViewAutor.setText(phrase.getAuthor());
+        holder.textViewFrase.setText(phrase.getPhrase());
 
         // Set click listener for each phrase
         holder.itemView.setOnClickListener(v -> onItemClickListener.onItemClick(phrase));
@@ -43,11 +44,15 @@ public class PhraseAdapter extends RecyclerView.Adapter<PhraseAdapter.PhraseView
     }
 
     public static class PhraseViewHolder extends RecyclerView.ViewHolder {
-        TextView textViewPhrase;
+
+        TextView textViewAutor;
+        TextView textViewFrase;
+
 
         public PhraseViewHolder(@NonNull View itemView) {
             super(itemView);
-            textViewPhrase = itemView.findViewById(R.id.textViewPhrase);
+            textViewAutor = itemView.findViewById(R.id.textViewTitulo);
+            textViewFrase = itemView.findViewById(R.id.textViewFrase);  // Referencia al TextView del cuerpo
         }
     }
 }
