@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.elvistezen.arroz.R;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.rewarded.RewardedAd;
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback;
@@ -28,10 +29,14 @@ public class GalleryFragment extends Fragment {
     private FragmentGalleryBinding binding;
     private RewardedAd rewardedAd;
 
-
+    @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentGalleryBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+
+        // Inicializar el SurfaceView animado de estrellas
+        StarSurfaceView starSurfaceView = root.findViewById(R.id.star_surface_view);
+
 
         // Obtener datos del bundle
         Bundle args = getArguments();
@@ -40,14 +45,10 @@ public class GalleryFragment extends Fragment {
             String phrase = args.getString("phrase");
             String meaning = args.getString("meaning");
 
-//          binding.textGallery.setText("Autor: " + author + "\n\nFrase: " + phrase + "\n\nSignificado: " + meaning);
-
             // Mostrar los datos
             binding.textAutor.setText("El Titulo es: " + author );
             binding.textFrase.setText("La Frase es: " + phrase );
             binding.textDetalle.setText("El Significado es: " + meaning );
-
-
         }
 
         // Cargar el anuncio de Rewarded
@@ -58,6 +59,7 @@ public class GalleryFragment extends Fragment {
 
         return root;
     }
+
 
     private void loadRewardedAd() {
         AdRequest adRequest = new AdRequest.Builder().build();
