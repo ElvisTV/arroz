@@ -25,30 +25,72 @@
             android:layout_height="120dp"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="16dp"
-            android:src="@mipmap/ic_tercero"
+            android:contentDescription="@string/detail_estrellas"
             android:scaleType="centerCrop"
-            android:contentDescription="@string/detail_estrellas" />
+            android:src="@mipmap/ic_tercero" />
+
+        <!--    Autor    -->
+        <TextView
+            android:id="@+id/text_autor_sn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/profile_image"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="Autor"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/text_autor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/text_autor_sn"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:layout_below="@id/profile_image"
             android:textSize="20sp" />
 
+        <!--    Frase    -->
+
         <TextView
-            android:id="@+id/text_frase"
+            android:id="@+id/text_frase_sn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/text_autor"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
+            android:text="Frase"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/text_frase"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_frase_sn"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/text_detalle_sn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_frase"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="Reflexión"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="20sp" />
@@ -57,19 +99,32 @@
             android:id="@+id/text_detalle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/text_detalle_sn"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:layout_below="@id/text_frase"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/text_promocion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_detalle"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="Mira videos para ganar monedas y ver más frases"
+            android:textAlignment="center"
+            android:textColor="@color/white"
             android:textSize="20sp" />
 
         <Button
             android:id="@+id/save_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/text_detalle"
+            android:layout_below="@id/text_promocion"
             android:layout_marginTop="24dp"
             android:text="@string/btn_anuncio"
             android:textSize="16sp" />

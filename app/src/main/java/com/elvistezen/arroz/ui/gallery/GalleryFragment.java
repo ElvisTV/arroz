@@ -46,9 +46,9 @@ public class GalleryFragment extends Fragment {
             String meaning = args.getString("meaning");
 
             // Mostrar los datos
-            binding.textAutor.setText("El Titulo es: " + author );
-            binding.textFrase.setText("La Frase es: " + phrase );
-            binding.textDetalle.setText("El Significado es: " + meaning );
+            binding.textAutor.setText(author );
+            binding.textFrase.setText(phrase );
+            binding.textDetalle.setText(meaning );
         }
 
         // Cargar el anuncio de Rewarded
