@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#6A00FF"
     android:layout_margin="8dp"
+    android:background="#F0F4F8"
     android:padding="16dp">
 
     <androidx.cardview.widget.CardView
@@ -12,57 +12,61 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
-        android:background="#F7FF00"
-        app:cardCornerRadius="12dp"
-        app:cardElevation="30dp"
+        android:background="@android:color/transparent"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:padding="8dp"
-        >
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#FFFB0A"
-            android:padding="8dp">
+            android:background="#FFFFFF"
+            android:elevation="4dp"
+            android:padding="16dp">
 
-            <!-- Image on the left -->
+
             <ImageView
                 android:id="@+id/header_image"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:layout_marginEnd="8dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginBottom="8dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
                 android:contentDescription="Product Image"
                 android:scaleType="centerCrop"
-                android:src="@mipmap/ic_principal_round"
+                android:src="@mipmap/ic_segundo_round"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <!-- Title to the right of the image -->
+
             <TextView
                 android:id="@+id/textViewTitulo"
-                style="@style/TextAppearance.MaterialComponents.Headline4"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginBottom="4dp"
+                android:fontFamily="sans-serif-black"
                 android:text="I'm a title"
+                android:textColor="#333333"
+                android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/header_image"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <!-- Body text below the title -->
+
             <TextView
                 android:id="@+id/textViewFrase"
-                style="@style/TextAppearance.MaterialComponents.Body1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="4dp"
+                android:fontFamily="sans-serif-condensed"
                 android:text="I'm a supporting text. Very Lorem ipsum dolor sit amet..."
+                android:textColor="#666666"
+                android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/header_image"
                 app:layout_constraintTop_toBottomOf="@id/textViewTitulo" />
