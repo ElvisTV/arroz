@@ -107,11 +107,27 @@
             android:textColor="@color/white"
             android:textSize="20sp" />
 
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_detalle"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:ems="10"
+            android:hint="Escribe tu opinión sobre la frase"
+            android:inputType="textPassword"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            />
+
         <TextView
             android:id="@+id/text_promocion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/text_detalle"
+            android:layout_below="@id/password"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
@@ -119,6 +135,8 @@
             android:textAlignment="center"
             android:textColor="#00FF0D"
             android:textSize="20sp" />
+
+
 
         <Button
             android:id="@+id/save_button"
