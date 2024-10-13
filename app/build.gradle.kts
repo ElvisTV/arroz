@@ -10,8 +10,8 @@ android {
         applicationId = "com.elvistezen.arroz"
         minSdk = 24
         targetSdk = 34
-        versionCode = 3
-        versionName = "1.3"
+        versionCode = 7
+        versionName = "1.7"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }

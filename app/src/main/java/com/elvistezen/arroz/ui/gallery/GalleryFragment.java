@@ -19,6 +19,8 @@ import com.google.android.gms.ads.rewarded.RewardItem;
 import com.google.android.gms.ads.OnUserEarnedRewardListener;
 import com.google.android.gms.ads.LoadAdError;
 
+import android.util.Log;
+
 
 public class GalleryFragment extends Fragment {
 
@@ -32,7 +34,7 @@ public class GalleryFragment extends Fragment {
         View root = binding.getRoot();
 
         // Reproduce el sonido
-        playSound();
+        //playSound();
 
         // Inicializar el SurfaceView animado de estrellas
         StarSurfaceView starSurfaceView = root.findViewById(R.id.star_surface_view);
@@ -70,7 +72,8 @@ public class GalleryFragment extends Fragment {
 
                     @Override
                     public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
-                        // Manejar el error
+                        //Log.d("AdLoadError", loadAdError.toString());
+                        //Toast.makeText(requireContext(), loadAdError.toString(), Toast.LENGTH_SHORT).show();
                     }
                 });
     }
@@ -87,7 +90,7 @@ public class GalleryFragment extends Fragment {
                 }
             });
         } else {
-            Toast.makeText(requireContext(), "Loading", Toast.LENGTH_SHORT).show();
+            Toast.makeText(requireContext(), "Intentalo más tardes. En este momento no hay videos disponible", Toast.LENGTH_SHORT).show();
         }
     }
 

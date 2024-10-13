@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Skina</string>
+    <string name="app_name">FraseFlow</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">FraseFlow</string>
@@ -12,6 +12,6 @@
     <string name="menu_slideshow">Beta</string>
 
     <string name="detail_estrellas">Detalle</string>
-    <string name="btn_anuncio">Ver video</string>
+    <string name="btn_anuncio">Intentar ver video</string>
 
 </resources>
