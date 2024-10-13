@@ -63,7 +63,8 @@ public class GalleryFragment extends Fragment {
 
     private void loadRewardedAd() {
         AdRequest adRequest = new AdRequest.Builder().build();
-        RewardedAd.load(requireContext(), "ca-app-pub-5800756673263633/1308343356", adRequest,
+        //RewardedAd.load(requireContext(), "ca-app-pub-3940256099942544/5224354917", adRequest, // de prueba
+        RewardedAd.load(requireContext(), "ca-app-pub-5800756673263633/3921345047", adRequest,
                 new RewardedAdLoadCallback() {
                     @Override
                     public void onAdLoaded(@NonNull RewardedAd ad) {
@@ -90,7 +91,7 @@ public class GalleryFragment extends Fragment {
                 }
             });
         } else {
-            Toast.makeText(requireContext(), "Intentalo más tardes. En este momento no hay videos disponible", Toast.LENGTH_SHORT).show();
+            Toast.makeText(requireContext(), "Intentalo más tarde. En este momento no hay videos disponibles", Toast.LENGTH_SHORT).show();
         }
     }
 
